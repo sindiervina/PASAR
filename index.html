@@ -1,0 +1,114 @@
+<!DOCTYPE html>
+<html lang="id"><head><meta charset="utf-8"><title>Pasar Nusantara Quest</title>
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<style>
+:root{--bg:#fffaf0;--fg:#2b2118;--card:#fff;--ac:#c2410c;--ok:#15803d;--no:#b91c1c;--bd:#e7d9c4;--mu:#7a6a58;box-sizing:border-box;padding-top:env(safe-area-inset-top,0px);padding-bottom:env(safe-area-inset-bottom,0px)}
+@media(prefers-color-scheme:dark){:root:not([data-theme=light]){--bg:#1c1712;--fg:#f3eadb;--card:#2a231b;--ac:#fb923c;--ok:#4ade80;--no:#f87171;--bd:#443a2d;--mu:#b5a48c}}
+*{box-sizing:border-box}body{margin:0;background:var(--bg);color:var(--fg);font:16px/1.5 system-ui,sans-serif}
+main{max-width:760px;margin:auto;padding:14px}h1{margin:.2em 0;font-size:1.6em;color:var(--ac)}
+nav{display:flex;gap:6px;margin:10px 0}nav button{flex:1}
+button{background:var(--ac);color:#fff;border:0;border-radius:8px;padding:9px 14px;font:inherit;cursor:pointer}
+button.o{background:var(--card);color:var(--fg);border:1px solid var(--bd)}button.on{outline:3px solid var(--fg)}
+.c{background:var(--card);border:1px solid var(--bd);border-radius:12px;padding:12px 14px;margin:10px 0}
+.tag{background:var(--ac);color:#fff;border-radius:99px;padding:2px 10px;font-size:.8em}
+label{display:block;padding:6px 8px;border:1px solid var(--bd);border-radius:8px;margin:5px 0}
+.row{display:flex;justify-content:space-between;gap:8px;align-items:center;flex-wrap:wrap;padding:6px 0;border-bottom:1px dashed var(--bd)}
+select{max-width:100%;padding:6px;background:var(--card);color:var(--fg);border:1px solid var(--bd);border-radius:6px}
+.pool,.bucket{min-height:48px;border:2px dashed var(--bd);border-radius:10px;padding:6px;margin:6px 0}.bk{display:grid;grid-template-columns:1fr 1fr;gap:8px}
+.chip{display:inline-block;background:var(--card);border:1px solid var(--ac);border-radius:99px;padding:4px 12px;margin:3px;cursor:grab}.chip.s{background:var(--ac);color:#fff}
+.map{display:flex;gap:6px;flex-wrap:wrap}.map span{flex:1;min-width:120px;text-align:center;padding:8px;border-radius:10px;border:2px solid var(--bd);font-size:.9em}.map .cur{border-color:var(--ac)}.map .dn{background:var(--ok);color:#fff;border-color:var(--ok)}
+.good{color:var(--ok)}.bad{color:var(--no)}small,.mu{color:var(--mu)}table{width:100%;border-collapse:collapse}td,th{border:1px solid var(--bd);padding:5px;text-align:left;font-size:.9em}
+[hidden]{display:none!important}
+</style></head><body><main>
+<h1>🏺 Pasar Nusantara Quest</h1>
+<small>Gim edukasi Ekonomi · Kelas 10 · Materi: Pasar · ±30 menit</small>
+<nav><button class="o on" data-p=p1>🗺️ Peta &amp; Misi</button><button class="o" data-p=p2>🎮 Main</button><button class="o" data-p=p3>👩‍🏫 Panduan Guru</button></nav>
+
+<section id=p1>
+<div class=c><b>Narasi:</b> Pasar Raya Nusantara kacau! Sang Penjaga Pasar menghilang dan Gulungan Harga terpecah menjadi empat bagian. Kamu, Juragan Muda, harus menjelajahi empat zona, memahami cara kerja pasar, lalu mengalahkan Raja Kartel di Benteng Struktur untuk mengembalikan keseimbangan pasar.</div>
+<div id=zl></div></section>
+
+<section id=p2 hidden>
+<div class=map id=mp></div>
+<div class=c><b id=hd></b><div id=q></div></div></section>
+
+<section id=p3 hidden>
+<div class=c><b>Alur &amp; waktu (30 menit)</b><table>
+<tr><th>Zona</th><th>Menit</th><th>Soal</th><th>Jenis</th></tr>
+<tr><td>1 Gerbang Pasar</td><td>6</td><td>4</td><td>PG, PGK, Benar/Salah</td></tr>
+<tr><td>2 Lembah Klasifikasi</td><td>7</td><td>3</td><td>PG, Drag and Drop, Benar/Salah</td></tr>
+<tr><td>3 Bukit Struktur</td><td>10</td><td>4</td><td>Menjodohkan, PGK, Mengurutkan, PG</td></tr>
+<tr><td>4 Benteng Boss (HOTS)</td><td>7</td><td>2</td><td>Studi kasus PG &amp; PGK</td></tr></table></div>
+<div class=c><b>Aturan pergerakan</b><ul>
+<li>Setiap soal benar = 10 poin (maks. 130). Tidak ada poin sebagian.</li>
+<li>Syarat lulus zona: minimal 70% soal zona dijawab benar. Lulus = lencana + zona berikutnya terbuka.</li>
+<li>Belum lulus: pemain mengulang zona itu (poin zona dihitung ulang). Pembahasan selalu tampil setelah menjawab.</li>
+<li>Boss Battle hanya bisa dibuka setelah tiga zona pertama lulus.</li>
+<li>Peringkat akhir: ≥110 Juragan Agung, 80–109 Pedagang Ulung, di bawah 80 Calon Pedagang.</li></ul></div>
+<div class=c><b>Tips guru</b><ul>
+<li>Mainkan individual (HP/laptop) atau berkelompok 3–4 siswa dengan satu perangkat.</li>
+<li>Drag and Drop: seret kartu ke kotak, atau ketuk kartu lalu ketuk kotak (untuk layar sentuh).</li>
+<li>Gunakan 5 menit terakhir untuk refleksi: minta siswa menyebut satu contoh nyata tiap struktur pasar di sekitarnya.</li>
+<li>Kunci jawaban dan pembahasan ada di data soal pada kode HTML (bagian <code>Z</code>) dan bisa disunting guru.</li></ul></div>
+</section>
+</main>
+<script>
+const Z=[
+{n:'Gerbang Pasar',e:'🏛️',q:'Buka gerbang dengan memahami pengertian dan fungsi pasar sebagai dasar mempelajari struktur pasar.',b:'🥉 Lencana Pedagang Muda',t:[
+{y:'pg',q:'Pasar dalam arti ekonomi adalah...',o:['Gedung tempat berjualan sayur','Mekanisme atau tempat bertemunya penjual dan pembeli untuk bertransaksi','Toko milik pemerintah','Tempat produsen menyimpan barang'],a:1,x:'Pasar tidak harus fisik; intinya adalah pertemuan penawaran dan permintaan.'},
+{y:'pg',q:'Harga cabai naik saat panen gagal karena penawaran turun sedangkan permintaan tetap. Fungsi pasar yang tampak adalah...',o:['Fungsi promosi','Fungsi pembentukan harga','Fungsi produksi','Fungsi pajak'],a:1,x:'Interaksi penawaran dan permintaan membentuk harga.'},
+{y:'pgk',q:'Pilih SEMUA fungsi pasar:',o:['Distribusi barang dan jasa','Pembentuk harga','Sarana promosi','Mencetak uang','Menetapkan UMR'],a:[0,1,2],x:'Mencetak uang dan UMR bukan fungsi pasar.'},
+{y:'bs',q:'Tentukan benar atau salah:',s:[['Pasar harus berupa tempat fisik.',0],['Marketplace online termasuk pasar.',1],['Pasar mempertemukan penjual dan pembeli.',1]],x:'Pasar bisa abstrak seperti marketplace dan bursa.'}]},
+{n:'Lembah Klasifikasi',e:'🌄',q:'Kelompokkan pasar berdasarkan wujud, jangkauan, dan jenis barang sebelum masuk ke struktur pasar.',b:'🥈 Lencana Peracik Pasar',t:[
+{y:'pg',q:'Pasar yang memperdagangkan tenaga kerja, tanah, dan modal disebut...',o:['Pasar barang konsumsi','Pasar faktor produksi','Pasar internasional','Pasar konkret'],a:1,x:'Faktor produksi: tenaga kerja, tanah, modal, keahlian.'},
+{y:'dd',q:'Seret setiap kartu ke jenis pasar yang tepat (menurut wujud):',i:['Pasar induk','Bursa efek','Supermarket','Jual beli valas lewat internet'],c:['Pasar konkret (barang ada, tatap muka)','Pasar abstrak (tanpa barang di tempat)'],a:[0,1,0,1],x:'Konkret: barang ada di tempat. Abstrak: transaksi lewat komunikasi.'},
+{y:'bs',q:'Tentukan benar atau salah:',s:[['Pasar internasional jangkauannya lintas negara.',1],['Bursa efek adalah pasar konkret.',0],['Pengelompokan pasar menurut jumlah penjual dan pembeli disebut struktur pasar.',1]],x:'Bursa efek adalah pasar abstrak.'}]},
+{n:'Bukit Struktur',e:'⛰️',q:'Kuasai ciri, kelebihan, dan kelemahan empat struktur pasar.',b:'🥇 Lencana Analis Struktur',t:[
+{y:'mt',q:'Jodohkan ciri dengan struktur pasarnya:',l:['Penjual dan pembeli sangat banyak, barang homogen','Satu penjual, tanpa barang pengganti','Beberapa penjual besar saling bergantung','Banyak penjual, produk dibedakan merek'],r:['Persaingan sempurna','Monopoli','Oligopoli','Persaingan monopolistik'],a:[0,1,2,3],x:'Ciri utama tiap struktur dilihat dari jumlah penjual dan sifat barang.'},
+{y:'pgk',q:'Pilih SEMUA kelemahan pasar monopoli:',o:['Harga cenderung tinggi','Pilihan konsumen terbatas','Pesaing baru mudah masuk','Kurang dorongan berinovasi','Banyak produsen saling bersaing'],a:[0,1,3],x:'Hambatan masuk tinggi membuat monopolis kuat atas harga.'},
+{y:'mt',q:'Urutkan dari persaingan TERTINGGI (1) sampai TERENDAH (4):',l:['Monopoli','Persaingan sempurna','Oligopoli','Persaingan monopolistik'],r:['1','2','3','4'],a:[3,0,2,1],x:'Urutan: persaingan sempurna, monopolistik, oligopoli, monopoli.'},
+{y:'pg',q:'Kelebihan utama pasar persaingan sempurna adalah...',o:['Laba selalu besar','Harga kompetitif dan sumber daya dipakai efisien','Produsen menentukan harga sendiri','Tidak ada persaingan'],a:1,x:'Banyak pesaing menekan harga dan mendorong efisiensi.'}]},
+{n:'Benteng Raja Kartel (Boss HOTS)',e:'🏰',q:'Analisis kasus nyata struktur pasar dan kalahkan Raja Kartel untuk memulihkan Pasar Nusantara.',b:'👑 Gelar Juragan Agung',t:[
+{y:'pg',q:'KASUS: Operator seluler A, B, C menguasai 95% pasar. Saat A menurunkan tarif data, B dan C menyusul pada hari yang sama. Analisis paling tepat:',o:['Persaingan sempurna, karena harga turun','Monopoli, karena hanya A yang menentukan','Oligopoli, karena penjual sedikit dan keputusan saling memengaruhi','Persaingan monopolistik, karena tidak ada merek'],a:2,x:'Saling bergantung antar penjual besar adalah ciri khas oligopoli.'},
+{y:'pgk',q:'KASUS: Tiket pesawat pada rute tertentu mahal karena hanya dua maskapai melayani. Pilih SEMUA kebijakan yang tepat untuk mendorong harga lebih wajar:',o:['Mempermudah maskapai baru masuk rute','Mengawasi kesepakatan harga (kartel) oleh KPPU','Memberi hak tunggal kepada satu maskapai','Meningkatkan transparansi informasi harga','Melarang konsumen membandingkan harga'],a:[0,1,3],x:'Menambah pesaing, mengawasi kartel, dan transparansi memperkuat persaingan.'}]}];
+const TY={pg:'Pilihan Ganda',pgk:'Pilihan Ganda Kompleks',bs:'Benar / Salah',dd:'Drag and Drop',mt:'Menjodohkan / Mengurutkan'};
+let zi=0,ti=0,sc=0,zp=0,zc=0,st={},$=s=>document.querySelector(s);
+$('#zl').innerHTML=Z.map((z,i)=>`<div class=c><b>${z.e} Zona ${i+1}: ${z.n}</b><br>Misi Utama (Struktur Pasar): ${z.q}<br><small>Imbalan: ${z.b} + ${z.t.length*10} poin · lulus ≥70% benar</small></div>`).join('');
+document.querySelectorAll('nav button').forEach(b=>b.onclick=()=>{document.querySelectorAll('nav button').forEach(x=>x.classList.remove('on'));b.classList.add('on');['p1','p2','p3'].forEach(p=>$('#'+p).hidden=p!=b.dataset.p)});
+function map(){$('#mp').innerHTML=Z.map((z,i)=>`<span class="${i<zi?'dn':i==zi?'cur':''}">${z.e} ${i+1}${i<zi?' ✔':''}</span>`).join('')}
+function show(){map();const z=Z[zi],t=z.t[ti];st={P:{}};
+$('#hd').textContent=`${z.e} ${z.n} · Soal ${ti+1}/${z.t.length} · Skor ${sc}`;
+let h=`<span class=tag>${TY[t.y]}</span><p><b>${t.q}</b></p>`;
+if(t.y=='pg')h+=t.o.map((x,k)=>`<label><input type=radio name=r value=${k}> ${x}</label>`).join('');
+if(t.y=='pgk')h+=t.o.map((x,k)=>`<label><input type=checkbox value=${k}> ${x}</label>`).join('');
+if(t.y=='bs')h+=t.s.map((x,k)=>`<div class=row><span>${x[0]}</span><span><label style="display:inline"><input type=radio name=b${k} value=1> Benar</label> <label style="display:inline"><input type=radio name=b${k} value=0> Salah</label></span></div>`).join('');
+if(t.y=='mt')h+=t.l.map((x,k)=>`<div class=row><span>${x}</span><select id=s${k}><option value="">Pilih…</option>${t.r.map((y,j)=>`<option value=${j}>${y}</option>`).join('')}</select></div>`).join('');
+if(t.y=='dd')h+='<div id=dd></div>';
+h+='<p><button id=ck>Periksa</button> <button id=nx hidden>Lanjut ➜</button></p><div id=fb></div>';
+$('#q').innerHTML=h;if(t.y=='dd')dd(t);$('#ck').onclick=()=>chk(t);$('#nx').onclick=nxt}
+function dd(t){const P=st.P,el=$('#dd');
+const ch=(x,k)=>`<span class="chip ${st.sel==k?'s':''}" draggable=true data-k=${k}>${x}</span>`;
+el.innerHTML=`<div class=pool data-c=-1>${t.i.map((x,k)=>P[k]===undefined?ch(x,k):'').join('')}</div><div class=bk>`+t.c.map((c,j)=>`<div class=bucket data-c=${j}><b>${c}</b><br>${t.i.map((x,k)=>P[k]===j?ch(x,k):'').join('')}</div>`).join('')+'</div>';
+const put=(k,c)=>{if(st.done)return;if(c<0)delete P[k];else P[k]=c;st.sel=null;dd(t)};
+el.querySelectorAll('.chip').forEach(c=>{c.onclick=e=>{e.stopPropagation();if(st.done)return;const k=c.dataset.k;if(P[k]!==undefined)put(k,-1);else{st.sel=k;dd(t)}};c.ondragstart=e=>e.dataTransfer.setData('t',c.dataset.k)});
+el.querySelectorAll('[data-c]').forEach(b=>{b.onclick=()=>{if(st.sel!=null)put(st.sel,+b.dataset.c)};b.ondragover=e=>e.preventDefault();b.ondrop=e=>{e.preventDefault();put(e.dataTransfer.getData('t'),+b.dataset.c)}})}
+function chk(t){if(st.done)return;let ok=false;const q=$('#q');
+if(t.y=='pg'){const c=q.querySelector('input:checked');ok=!!c&&+c.value==t.a}
+if(t.y=='pgk'){ok=[...q.querySelectorAll('input:checked')].map(c=>+c.value).join()==t.a.join()}
+if(t.y=='bs')ok=t.s.every((x,k)=>{const c=q.querySelector(`input[name=b${k}]:checked`);return c&&+c.value==x[1]})
+if(t.y=='mt')ok=t.l.every((x,k)=>$('#s'+k).value!==''&&+$('#s'+k).value==t.a[k]);
+if(t.y=='dd')ok=t.i.every((x,k)=>st.P[k]===t.a[k]);
+st.done=1;q.querySelectorAll('input,select').forEach(e=>e.disabled=true);
+if(ok){sc+=10;zp+=10;zc++}
+$('#fb').innerHTML=`<p class="${ok?'good':'bad'}"><b>${ok?'✅ Tepat! +10 poin':'❌ Belum tepat.'}</b></p><p>${t.x}</p>`;
+$('#ck').hidden=false;$('#ck').hidden=true;$('#nx').hidden=false}
+function nxt(){const z=Z[zi];if(++ti<z.t.length)return show();
+const ok=zc>=Math.ceil(z.t.length*.7),last=zi==Z.length-1;map();
+let h=`<h3>${ok?'🎉 Zona lulus!':'😅 Belum lulus zona'}</h3><p>Benar ${zc} dari ${z.t.length} soal (butuh ≥70%).</p>`;
+if(ok)h+=`<p>Imbalan: <b>${z.b}</b></p>`;
+if(ok&&last){const r=sc>=110?'Juragan Agung':sc>=80?'Pedagang Ulung':'Calon Pedagang';h+=`<p>Pasar Nusantara pulih! Skor akhir <b>${sc}/130</b>, peringkat <b>${r}</b>.</p><button onclick="location.reload()">Main lagi</button>`}
+else h+=`<button id=go>${ok?'Zona berikutnya ➜':'Ulangi zona'}</button>`;
+$('#q').innerHTML=h;$('#hd').textContent=`${z.e} ${z.n} · Skor ${sc}`;
+if($('#go'))$('#go').onclick=()=>{if(ok)zi++;else sc-=zp;ti=0;zp=0;zc=0;show()}}
+show();
+</script></body></html>
